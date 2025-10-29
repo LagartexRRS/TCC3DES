@@ -1,0 +1,139 @@
+// Variáveis SCSS para o tema em vermelho e preto
+$fonte-principal: 'Arial', sans-serif; // Fonte comum para compatibilidade
+$vermelho: #E50914; // Um vermelho forte (como o de neon)
+$cinza-claro: #AAAAAA; // Cinza claro para o corpo do texto
+$fundo-preto: #000000; // Fundo preto
+
+// Estilos base do corpo
+body {
+  background-color: $fundo-preto; // Usa a variável de fundo
+  color: #777777; // Cor cinza escuro para o texto geral (em vez de 'gray')
+  font-family: $fonte-principal;
+  margin: 0;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+// Estilos para o container principal
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  // Borda sutil de destaque para o container no tema neon
+  border: 1px solid rgba($vermelho, 0.2);
+  box-shadow: 0 0 15px rgba($vermelho, 0.2);
+}
+
+// Estilos dos títulos (H1 e H2)
+h1, h2 {
+  color: $vermelho;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  // Efeito de neon/brilho no texto
+  text-shadow: 0 0 10px rgba($vermelho, 0.7);
+  margin-top: 40px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  // Linha de separação sob o título principal
+  border-bottom: 2px solid $vermelho;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  // Borda lateral para destaque de seção
+  border-left: 5px solid $vermelho;
+  padding-left: 10px;
+}
+
+// Estilo dos parágrafos
+p {
+  // Deixa o texto um pouco mais claro que o cinza principal para contraste suave
+  color: lighten($cinza-claro, 10%);
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+// Estilo para o bloco de texto pré-formatado (onde o conteúdo do manual está)
+pre {
+    background-color: #111111; // Fundo um pouco mais claro para o bloco de código
+    border: 1px solid rgba($vermelho, 0.5);
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    white-space: pre-wrap; // Permite que o texto quebre linhas
+    word-wrap: break-word; // Garante que palavras longas quebrem
+    font-family: 'Consolas', 'Courier New', monospace; // Fonte monoespaçada para código
+    font-size: 0.95rem;
+    color: $cinza-claro;
+}
+
+// Estilos das listas (UL e LI)
+ul {
+  list-style: none;
+  padding-left: 20px;
+  // Borda lateral como um elemento visual de interface
+  border-left: 2px solid rgba($vermelho, 0.5);
+  margin-bottom: 30px;
+
+  li {
+    position: relative;
+    margin: 8px 0;
+    padding-left: 25px;
+    // Deixa o item da lista um pouco mais claro que o texto normal
+    color: lighten($cinza-claro, 15%);
+    font-size: 1rem;
+
+    &::before {
+      content: "♦"; // Icone de diamante como marcador
+      color: $vermelho;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+// Estilos dos links
+a {
+  color: $vermelho;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: white; // Fica branco no hover para maior contraste
+    text-shadow: 0 0 10px $vermelho; // Efeito de brilho neon no hover
+  }
+}
+
+// Estilo do separador horizontal
+hr {
+  border: none;
+  // Linha fina e sutil com a cor de destaque
+  border-top: 1px solid rgba($vermelho, 0.4);
+  margin: 30px 0;
+}
+
+// Media Query para Responsividade em telas menores
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p, li {
+    font-size: 1rem;
+  }
+}
